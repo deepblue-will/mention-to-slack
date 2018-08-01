@@ -4,7 +4,8 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node_modules/.bin/sls offline",
+    "deploy": "node_modules/.bin/sls deploy -v"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,10 @@
   },
   "homepage": "https://github.com/deepblue-will/serverless-test#readme",
   "devDependencies": {
+    "serverless": "^1.29.2",
     "serverless-offline": "^3.25.6"
+  },
+  "dependencies": {
+    "@slack/client": "^4.3.1"
   }
 }
