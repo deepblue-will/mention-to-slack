@@ -1,0 +1,22 @@
+{
+  "name": "serverless-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/deepblue-will/serverless-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepblue-will/serverless-test/issues"
+  },
+  "homepage": "https://github.com/deepblue-will/serverless-test#readme",
+  "devDependencies": {
+    "serverless-offline": "^3.25.6"
+  }
+}
