@@ -9,11 +9,14 @@ module.exports = async () => {
   const conversationId = 'C14G28YV8';
   const name = slackName.fromGithubName('@deepblue-will');
   try {
-    await web.chat.postMessage({
+    const res = await web.chat.postMessage({
       channel: conversationId,
       text: `${name} aaaa`,
     });
+
+    return res.ok;
   } catch (error) {
     console.error(error);
+    return false
   }
 };

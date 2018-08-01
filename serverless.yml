@@ -25,7 +25,7 @@ provider:
   environment:
     SLACK_TOKEN: ${ssm:SLACK_TOKEN}
 
-plugins: 
+plugins:
  - serverless-offline
 
 # you can add statements to the Lambda function's IAM Role here
@@ -63,7 +63,7 @@ functions:
     events:
       - http:
           path: to-slack/github
-          method: get
+          method: post
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

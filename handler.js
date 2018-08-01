@@ -1,10 +1,10 @@
 const toSlack = require('./to_slack');
 
-module.exports.fromGithub = async (event, context, callback) => {
-  await toSlack();
+module.exports.fromGithub = async ({body, queryStringParameters}, context, callback) => {
+  const res = await toSlack();
   const response = {
-    statusCode: 200,
-    body: 'ok!',
+    statusCode: res ? 200 : 500,
+    body: res ? 'success' : 'slack error',
   };
 
   callback(null, response);
