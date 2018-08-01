@@ -1,5 +1,3 @@
-'use strict';
-
 const toSlack = require('./to_slack');
 
 module.exports.fromGithub = async (event, context, callback) => {

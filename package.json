@@ -5,6 +5,8 @@
   "main": "handler.js",
   "scripts": {
     "start": "node_modules/.bin/sls offline",
+    "lint": "eslint --ext .js ./",
+    "lint:fix": "npm run lint -- --fix",
     "deploy": "node_modules/.bin/sls deploy -v",
     "prettier": "prettier --write \"**/*.js\""
   },
@@ -25,6 +27,10 @@
   },
   "homepage": "https://github.com/deepblue-will/serverless-test#readme",
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
     "lint-staged": "^7.2.0",
     "prettier": "1.14.0",
     "serverless": "^1.29.2",
