@@ -4,6 +4,9 @@
 GitHub上でメンションするとSlackのユーザ名に置換し、Slackの指定のチャンネルに通知します。
 また、PRでreviewerを設定した時もSlackに通知します
 
+![web 1920 1](https://user-images.githubusercontent.com/1859021/43616998-5682358a-96fa-11e8-95fa-75641d4e2089.png)
+
+
 ## 準備
 - node 8.xのインストール
 
