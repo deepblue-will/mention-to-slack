@@ -1,5 +1,5 @@
 const toSlack = require('./to_slack');
-const createMessageFromGithub = require('./create_slack_message');
+const SlackAttachmentBuilder = require('./slack_attachment_builder');
 
 module.exports.fromGithub = async (
   { body, queryStringParameters },
@@ -26,7 +26,7 @@ module.exports.fromGithub = async (
     return;
   }
 
-  const message = createMessageFromGithub(payload);
+  const message = SlackAttachmentBuilder.fromGithub(payload);
   const response = {
     statusCode: 200,
     body: '',
