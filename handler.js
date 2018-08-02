@@ -18,7 +18,7 @@ module.exports.fromGithub = async (
   try {
     payload = JSON.parse(body);
   } catch (e) {
-    console.error(error);
+    console.error(e);
     callback(null, {
       statusCode: 400,
       body: 'json parse error',
