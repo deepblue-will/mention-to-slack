@@ -57,13 +57,20 @@ class SlackAttachmentBuilder {
       return null;
     }
 
+    let replaced = false;
     const text = mentions.reduce((str, mention) => {
       const slackName = AccountUtil.getSlackNameByGitHub(mention);
       if (slackName) {
+        replaced = true;
         return str.replace(new RegExp(mention, 'g'), slackName);
       }
       return str;
     }, body);
+
+    // 置換対象のメンションがない場合なにもしない
+    if(!replaced) {
+      return null;
+    }
 
     // see: https://api.slack.com/docs/message-attachments
     return {
