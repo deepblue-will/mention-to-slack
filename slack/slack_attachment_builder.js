@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const AccountUtil = require('../util/account_util');
 
 class SlackAttachmentBuilder {
@@ -22,18 +23,18 @@ class SlackAttachmentBuilder {
     }
 
     if (review) {
-      pretext = pretext ? pretext : `GitHub review ${action}`;
-      body = body ? body : review.body;
-      updatedAt = updatedAt ? updatedAt : review.updated_at;
-      titleUrl = titleUrl ? titleUrl : review.html_url;
+      pretext = pretext || `GitHub review ${action}`;
+      body = body || review.body;
+      updatedAt = updatedAt || review.updated_at;
+      titleUrl = titleUrl || review.html_url;
     }
 
     if (issue) {
-      pretext = pretext ? pretext : `GitHub issue ${action}`;
+      pretext = pretext || `GitHub issue ${action}`;
       title = `${issue.title} #${issue.number}`;
-      body = body ? body : issue.body;
-      updatedAt = updatedAt ? updatedAt : issue.updated_at;
-      titleUrl = titleUrl ? titleUrl : issue.html_url;
+      body = body || issue.body;
+      updatedAt = updatedAt || issue.updated_at;
+      titleUrl = titleUrl || issue.html_url;
     }
 
     if (pull_request) {
@@ -43,12 +44,12 @@ class SlackAttachmentBuilder {
           .map(reviwer => `@${reviwer.login}`)
           .join(' ');
       } else {
-        pretext = pretext ? pretext : `GitHub pull-request ${action}`;
-        body = body ? body : pull_request.body;
+        pretext = pretext || `GitHub pull-request ${action}`;
+        body = body || pull_request.body;
       }
-      title = title ? title : `${pull_request.title} #${pull_request.number}`;
-      titleUrl = titleUrl ? titleUrl : pull_request.html_url;
-      updatedAt = updatedAt ? updatedAt : pull_request.updated_at;
+      title = title || `${pull_request.title} #${pull_request.number}`;
+      titleUrl = titleUrl || pull_request.html_url;
+      updatedAt = updatedAt || pull_request.updated_at;
     }
 
     const mentions = AccountUtil.getMentions(body);
@@ -60,12 +61,11 @@ class SlackAttachmentBuilder {
       const slackName = AccountUtil.getSlackNameByGitHub(mention);
       if (slackName) {
         return str.replace(new RegExp(mention, 'g'), slackName);
-      } else {
-        return str;
       }
+      return str;
     }, body);
 
-    //see: https://api.slack.com/docs/message-attachments
+    // see: https://api.slack.com/docs/message-attachments
     return {
       color: '#333',
       pretext,

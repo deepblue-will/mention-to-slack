@@ -7,5 +7,8 @@ module.exports = {
         allow: ['warn', 'error'],
       },
     ],
+    'one-var': 0,
+    'prefer-destructuring': 0,
+    'no-underscore-dangle': 0
   },
 };
