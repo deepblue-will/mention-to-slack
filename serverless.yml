@@ -61,6 +61,7 @@ package:
     - prettier.config.js
     - package.json
     - package-lock.json
+    - cloudbuild.yaml
 
 functions:
   fromGithub:

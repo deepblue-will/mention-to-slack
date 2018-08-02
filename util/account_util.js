@@ -9,11 +9,11 @@ class AccountUtil {
 
   static getMentions(text) {
     const matches = text.match(MENTION_REGEXP);
-    return matches ? matches.map((str) => str.trim()): null;
+    return matches ? matches.map(str => str.trim()) : null;
   }
 
   static _getSlackName(serviceName, name) {
-    const account = ACCOUNTS.find(account => account[serviceName] === name);
+    const account = ACCOUNTS.find(a => a[serviceName] === name);
     return account ? account.slack : null;
   }
 }

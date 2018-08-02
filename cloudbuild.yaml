@@ -1,0 +1,5 @@
+steps:
+  - name: 'gcr.io/cloud-builders/npm:node-8.11.0'
+    args: ['install']
+  - name: 'gcr.io/cloud-builders/npm:node-8.11.0'
+    args: ['run', 'lint']
