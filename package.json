@@ -1,5 +1,5 @@
 {
-  "name": "serverless-test",
+  "name": "mention-to-slack",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/deepblue-will/serverless-test.git"
+    "url": "git+ssh://git@github.com/deepblue-will/mention-to-slack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/deepblue-will/serverless-test/issues"
+    "url": "https://github.com/deepblue-will/mention-to-slack/issues"
   },
-  "homepage": "https://github.com/deepblue-will/serverless-test#readme",
+  "homepage": "https://github.com/deepblue-will/mention-to-slack#readme",
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
