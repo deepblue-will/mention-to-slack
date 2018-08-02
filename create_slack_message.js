@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const AccountUtil = require('./account_util');
 
 const createMessageFromGithub = ({
