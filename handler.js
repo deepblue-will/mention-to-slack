@@ -1,5 +1,5 @@
-const toSlack = require('./to_slack');
-const SlackAttachmentBuilder = require('./slack_attachment_builder');
+const toSlack = require('./slack/to_slack');
+const SlackAttachmentBuilder = require('./slack/slack_attachment_builder');
 
 module.exports.fromGithub = async (
   { body, queryStringParameters },

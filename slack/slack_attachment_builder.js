@@ -1,4 +1,4 @@
-const AccountUtil = require('./account_util');
+const AccountUtil = require('../util/account_util');
 
 class SlackAttachmentBuilder {
   static fromGithub({

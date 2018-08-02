@@ -1,4 +1,4 @@
-const ACCOUNTS = require('./accounts');
+const ACCOUNTS = require('../accounts');
 
 const MENTION_REGEXP = /(?:^|[^a-zA-Z0-9_＠!@#$%&*])(?:(?:@|＠)(?!\/))([a-zA-Z0-9/_.-]+)(?:\b(?!@|＠)|$)/g;
 
